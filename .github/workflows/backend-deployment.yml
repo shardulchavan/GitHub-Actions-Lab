@@ -29,8 +29,8 @@ jobs:
         file: ./backend/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest
-        build-args:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        # build-args:
+        #   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     - name: SSH into GCE and deploy
       uses: appleboy/ssh-action@v0.1.3
