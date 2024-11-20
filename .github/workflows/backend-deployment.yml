@@ -44,7 +44,7 @@ jobs:
     #       docker pull ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest
     #       docker run -d --name fast-api-container -p 8001:8001 -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest
 
-    - name: SSH into AWS and deploy
+    - name: SSH into GCE and deploy
       env:
         GCE_HOST: ${{ secrets.GCE_HOST }}
         GCE_USERNAME: ${{ secrets.GCE_USERNAME }}
@@ -54,7 +54,7 @@ jobs:
       run: |
         echo "${GCE_SSH_KEY}" > /tmp/gce_ssh_key
         chmod 600 /tmp/gce_ssh_key
-        ssh -o StrictHostKeyChecking=no -i /tmp/gce_ssh_key ${GCE_USERNAME}@${GCE_HOST} << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i /tmp/gce_ssh_key ${GCE_USERNAME}@${GCE_HOST} << EOF
           docker stop fast-api-container || true
           docker rm fast-api-container || true
           docker pull ${DOCKER_USERNAME}/docker-labs:latest
