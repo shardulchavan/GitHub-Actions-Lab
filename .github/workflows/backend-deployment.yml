@@ -43,4 +43,4 @@ jobs:
           docker stop fast-api-container || true
           docker rm fast-api-container || true
           docker pull ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest
-          docker run -d --name fast-api-container -p 8000:80 ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest
+          docker run -d --name fast-api-container -p 8000:80 -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} ${{ secrets.DOCKER_USERNAME }}/docker-labs:latest

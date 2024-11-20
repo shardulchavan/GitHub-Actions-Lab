@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ./backend/ . 
 RUN pip install -r requirements.txt
 
-ENV OPENAI_API_KEY=${OPENAI_API_KEY}
+# ENV OPENAI_API_KEY=${OPENAI_API_KEY}
 
 EXPOSE 8000
 
