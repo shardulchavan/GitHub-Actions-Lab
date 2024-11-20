@@ -38,7 +38,6 @@ jobs:
         host: ${{ secrets.GCE_HOST }}
         username: ${{ secrets.GCE_USERNAME }}
         key: ${{ secrets.GCE_SSH_KEY }}
-        port: ${{ secrets.GCE_PORT }}
         script: |
           docker stop fast-api-container || true
           docker rm fast-api-container || true
