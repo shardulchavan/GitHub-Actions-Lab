@@ -9,6 +9,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 app = FastAPI()
 
 
+
 # Request model
 class ChatRequest(BaseModel):
     message: str
