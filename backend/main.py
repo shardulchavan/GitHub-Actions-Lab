@@ -38,6 +38,6 @@ def read_root():
 class TestPostRequest(BaseModel):
     name: str
 
-@app.post("/test")
-def test_post(request: TestPostRequest):
-    return {"greeting": f"Hello, {request.name}!"}
+# @app.post("/test")
+# def test_post(request: TestPostRequest):
+#     return {"greeting": f"Hello, {request.name}!"}
