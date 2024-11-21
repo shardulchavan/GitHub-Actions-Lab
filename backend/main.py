@@ -34,10 +34,10 @@ async def chat_with_openai(request: ChatRequest):
 def read_root():
     return {"message": "FastAPI is running!"}
 
-# # Simple POST endpoint for testing
-# class TestPostRequest(BaseModel):
-#     name: str
+# Simple POST endpoint for testing
+class TestPostRequest(BaseModel):
+    name: str
 
-# @app.post("/test")
-# def test_post(request: TestPostRequest):
-#     return {"greeting": f"Hello, {request.name}!"}
+@app.post("/test")
+def test_post(request: TestPostRequest):
+    return {"greeting": f"Hello, {request.name}!"}
